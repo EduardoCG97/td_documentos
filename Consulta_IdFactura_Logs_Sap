@@ -1,0 +1,4 @@
+SELECT DISTINCT  TRY_CONVERT(INT, SUBSTRING([U_Detalle], CHARINDEX('Code:', [U_Detalle]) + 6, CHARINDEX(' Error:', [U_Detalle]) - CHARINDEX('Code:', [U_Detalle]) - 6)) AS IdFactura
+FROM [SAP HANA TEST].[dbo].[@DKA_LOGPOS]
+WHERE U_Proceso = 'Facturas' AND U_Resultado = 9
+
